@@ -33,7 +33,7 @@ export const Dashboard: FC<DashboardProps> = (props) => {
           }}
         >
           <LeftSide data={data} />
-          <RightSide numberOfRows={data.length} />
+          <RightSide data={data} />
         </div>
       ) : (
         <div>Loading</div>

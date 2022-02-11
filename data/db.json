@@ -1,3 +1,138 @@
 {
-  "reviews": []
+  "reviews": [
+    {
+      "id": "0517b8cd-ea8e-4209-8e01-1ca578df9cd3",
+      "title": "genericTitle15",
+      "content": "genericContent15",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "3bef4ed9-2041-4677-827e-41064b147987",
+      "title": "genericTitle14",
+      "content": "genericContent14",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "30ac9d6d-d5d8-424d-a334-e76ee3b98d7f",
+      "title": "genericTitle1",
+      "content": "genericContent1",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "6d5e46a6-0ba6-4575-86aa-cfe7a198da92",
+      "title": "genericTitle8",
+      "content": "genericContent8",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "d2133a7b-f1a6-4423-be36-ac0a2ecb3f0c",
+      "title": "genericTitle2",
+      "content": "genericContent2",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "054fe1c9-cb4b-4410-8d32-e557ef084965",
+      "title": "genericTitle3",
+      "content": "genericContent3",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "288cab63-10e2-4541-9c41-97d9e890e3bd",
+      "title": "genericTitle9",
+      "content": "genericContent9",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "62733754-6c35-4aba-9636-543b1ea54cab",
+      "title": "genericTitle11",
+      "content": "genericContent11",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "0c0cc32e-f8bb-4ab2-84b5-cc936f8da450",
+      "title": "genericTitle10",
+      "content": "genericContent10",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "4d4aa1f9-c665-4e88-a053-1e59654f68b2",
+      "title": "genericTitle6",
+      "content": "genericContent6",
+      "createdAt": "Fri Feb 11 2022 16:52:44 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "7288a92d-4673-43d9-a1ae-5fd788c47646",
+      "title": "Title1_FromJson",
+      "content": "Content1",
+      "createdAt": "Fri Feb 11 2022 16:52:49 GMT+0200 (שעון ישראל (חורף))"
+    },
+    {
+      "id": "9a2b64ff-d273-41a0-a9af-ebada4338d9a",
+      "title": "Title2_FromJson",
+      "content": "Content2",
+      "createdAt": "Fri Feb 11 2022 16:52:49 GMT+0200 (שעון ישראל (חורף))"
+    }
+  ],
+  "genericReviews": [
+    {
+      "genericTitle": "genericTitle1",
+      "genericContent": "genericContent1"
+    },
+    {
+      "genericTitle": "genericTitle2",
+      "genericContent": "genericContent2"
+    },
+    {
+      "genericTitle": "genericTitle3",
+      "genericContent": "genericContent3"
+    },
+    {
+      "genericTitle": "genericTitle4",
+      "genericContent": "genericContent4"
+    },
+    {
+      "genericTitle": "genericTitle5",
+      "genericContent": "genericContent5"
+    },
+    {
+      "genericTitle": "genericTitle6",
+      "genericContent": "genericContent6"
+    },
+    {
+      "genericTitle": "genericTitle7",
+      "genericContent": "genericContent7"
+    },
+    {
+      "genericTitle": "genericTitle8",
+      "genericContent": "genericContent8"
+    },
+    {
+      "genericTitle": "genericTitle9",
+      "genericContent": "genericContent9"
+    },
+    {
+      "genericTitle": "genericTitle10",
+      "genericContent": "genericContent10"
+    },
+    {
+      "genericTitle": "genericTitle11",
+      "genericContent": "genericContent11"
+    },
+    {
+      "genericTitle": "genericTitle12",
+      "genericContent": "genericContent12"
+    },
+    {
+      "genericTitle": "genericTitle13",
+      "genericContent": "genericContent13"
+    },
+    {
+      "genericTitle": "genericTitle14",
+      "genericContent": "genericContent14"
+    },
+    {
+      "genericTitle": "genericTitle15",
+      "genericContent": "genericContent15"
+    }
+  ]
 }

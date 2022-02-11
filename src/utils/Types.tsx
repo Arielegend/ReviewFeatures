@@ -4,3 +4,8 @@ export type Review = {
   content: string;
   createdAt: string;
 };
+
+export type GenericReview = {
+  genericTitle: string;
+  genericContent: string;
+};

@@ -8,6 +8,7 @@ import { FC, useState } from "react";
 import Button from "@mui/material/Button";
 import { AddReview, DeleteReviewById } from "../utils/API";
 import { v4 as uuid } from "uuid";
+import { ValidateNewReview } from "../utils/Common";
 
 export const InsertNewReview: FC = (props) => {
   // Boolean Indicates of user started typing in the Title inputField
@@ -39,7 +40,7 @@ export const InsertNewReview: FC = (props) => {
   }
 
   function handleSubmit() {
-    if (validateNewReview()) {
+    if (ValidateNewReview(title, content)) {
       AddReview({
         id: uuid(),
         title: title,
@@ -47,19 +48,6 @@ export const InsertNewReview: FC = (props) => {
         createdAt: Date().toLocaleString(),
       });
     }
-  }
-
-  function validateNewReview() {
-    var titleAndContentMissing = "Title and content are missing...";
-    var contentMissing = "Content is missing...";
-    var titleMissing = "Title is missing...";
-
-    if (title.length > 0 && content.length > 0) {
-      return true;
-    } else if (title.length === 0 && content.length === 0)
-      alert(titleAndContentMissing);
-    else if (title.length === 0 && content.length !== 0) alert(contentMissing);
-    else if (title.length !== 0 && content.length === 0) alert(titleMissing);
   }
 
   const card = (
