@@ -33,7 +33,7 @@ export const InsertNewReview: FC = (props) => {
     } else {
       setDirtyTitle(true);
       if (newTitle.length > 255) {
-        alert("Reviews titles can be up to 125 characters");
+        alert("Reviews titles can be up to 255 characters");
       } else {
         setTitle(newTitle);
         setTitleLength(newTitle.length + "/255");

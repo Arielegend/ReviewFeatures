@@ -56,8 +56,12 @@ Upon pressing load GenericReviews button - 10 random Reviews from DataBase will 
 </ol>
 </li>
 
-<br/>
-<br/>
+
+
+## T.D.L
+* Save button implementation
+
+<hr style="border:2px solid gray"> </hr>
 
 ##### Written with <3
 
