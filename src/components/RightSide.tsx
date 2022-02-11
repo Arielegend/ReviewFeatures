@@ -105,7 +105,6 @@ export default function RightSide(props: RightSideProps) {
         <br />
         <br />
         <br />
-        <br />
         <Button
           style={{ textTransform: "none" }}
           color="secondary"
