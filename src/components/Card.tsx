@@ -22,12 +22,14 @@ export const OutlinedCard: FC<OutlinedCardProps> = (props) => {
   function GetCard() {
     if (onHover) {
       return (
-        <div>
-          <ClearIcon
-
-            //style={{ position: "relative", display: "inlineflex" }}
-            onClick={handleDelete}
-          />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <ClearIcon onClick={handleDelete} />
           {GetActualCard(props.review.title, props.review.content)}
         </div>
       );

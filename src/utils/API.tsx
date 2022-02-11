@@ -33,7 +33,7 @@ export async function DeleteReviewById(id: string) {
   window.location.reload();
 }
 
-export async function addReview(newReview: Review) {
+export async function AddReview(newReview: Review) {
   await fetch(pathToReview, {
     method: "POST",
     mode: "cors",

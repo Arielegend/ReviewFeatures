@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import { FC, useState } from "react";
 import Button from "@mui/material/Button";
-import { addReview, DeleteReviewById } from "../utils/API";
+import { AddReview, DeleteReviewById } from "../utils/API";
 import { v4 as uuid } from "uuid";
 
 export const InsertNewReview: FC = (props) => {
@@ -39,20 +39,40 @@ export const InsertNewReview: FC = (props) => {
   }
 
   function handleSubmit() {
-    const id: string = uuid();
-    addReview({
-      id: id,
-      title: title,
-      content: content,
-      createdAt: Date().toLocaleString(),
-    });
+    if (validateNewReview()) {
+      AddReview({
+        id: uuid(),
+        title: title,
+        content: content,
+        createdAt: Date().toLocaleString(),
+      });
+    }
+  }
+
+  function validateNewReview() {
+    var titleAndContentMissing = "Title and content are missing...";
+    var contentMissing = "Content is missing...";
+    var titleMissing = "Title is missing...";
+
+    if (title.length > 0 && content.length > 0) {
+      return true;
+    } else if (title.length === 0 && content.length === 0)
+      alert(titleAndContentMissing);
+    else if (title.length === 0 && content.length !== 0) alert(contentMissing);
+    else if (title.length !== 0 && content.length === 0) alert(titleMissing);
   }
 
   const card = (
     <React.Fragment>
       <CardContent>
         <div>
-          {!dirtyTitle ? <label>Enter review..</label> : <></>}
+          {!dirtyTitle ? (
+            <label>
+              <b>Enter a review</b>
+            </label>
+          ) : (
+            <></>
+          )}
 
           <div
             style={{
@@ -62,17 +82,12 @@ export const InsertNewReview: FC = (props) => {
           >
             {" "}
             <TextField
-              id="standard-basic"
               variant="standard"
               onChange={(e) => handleChangeTitle(e.target.value)}
-              value={title}
               fullWidth
+              helperText="Title"
             />
-            <TextField
-              id="standard-basic"
-              variant="standard"
-              value={titleLength}
-            />
+            <TextField variant="standard" value={titleLength} />
           </div>
         </div>
 
@@ -86,16 +101,17 @@ export const InsertNewReview: FC = (props) => {
         >
           <TextField
             variant="standard"
-            rows="3"
-            size="medium"
+            // rows="3"
+            // size="small"
             fullWidth
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            helperText="Content"
           />
           <Button
             variant="contained"
             size="small"
-            color="primary"
+            color="error"
             onClick={handleSubmit}
           >
             Add
@@ -107,7 +123,7 @@ export const InsertNewReview: FC = (props) => {
   );
 
   return (
-    <Box sx={{ minWidth: 100 }}>
+    <Box sx={{ minWidth: 100, cursor: "default" }}>
       <Card sx={{ backgroundColor: "#B9B7B7" }} variant="outlined">
         {card}
       </Card>
