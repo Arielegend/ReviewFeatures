@@ -15,6 +15,16 @@ export async function GetReviews() {
 }
 
 /*
+This function creates GET request, to fetch all reviews
+*/
+export async function GetGenericReviews() {
+  const response = await axios.get(pathToGenericReview);
+
+  if (response.status === 200) return response.data;
+  return [];
+}
+
+/*
 This function creates delete request, with id
 */
 export async function DeleteReviewById(id: string, batch = false) {
@@ -62,7 +72,6 @@ export async function AddReview(newReview: Review) {
 }
 
 export async function AddReviews(newReviews: Review[]) {
-  console.log("AddReviewsAddReviewsAddReviewsAddReviews -> ", newReviews);
   for (var i = 0; i < newReviews.length; i++) {
     await fetch(pathToReviews, {
       method: "POST",
@@ -79,16 +88,4 @@ export async function AddReviews(newReviews: Review[]) {
   }
 
   window.location.reload();
-}
-
-/*
-This function creates GET request, with given token, to fetch all generic reviews, then randomly return 10 
-generic reviews
-*/
-export async function GetGenericReviews() {
-  const response = await axios.get(pathToGenericReview);
-  if (response.status === 200) {
-    return response.data as GenericReview[];
-  }
-  return [];
 }

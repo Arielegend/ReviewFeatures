@@ -1,29 +1,39 @@
 import React, { useEffect, useState, FC } from "react";
-import axios from "axios";
-import { GetReviews } from "../utils/API";
-import { Review } from "../utils/Types";
+import { GetGenericReviews, GetReviews } from "../utils/API";
+import { GenericReview, Review } from "../utils/Types";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
 
-interface DashboardProps {}
+// Dashboard component hold the entire App.
+// At the uploading of App, while server is up, showing 'Loading' screen
+// Once data is fetch, we display ->
+//                                   LeftSide   - List of review
+//                                   RightSide  - Cntrol panel
+export const Dashboard: FC = () => {
+  // Variable to hold all reviews in the system
+  const [reviews, setReviews] = useState<Review[]>();
 
-export const Dashboard: FC<DashboardProps> = (props) => {
-  const [data, setData] = useState<Review[]>();
+  // Variable to hold all reviews in the system
+  const [genericReviews, setGenericReviews] = useState<GenericReview[]>();
 
+  // At the begining, we fetch all reviews and genericReviews stored in Database
+  // genericReviews -> Pre made and ready to deploy reviews located at db.json!
   useEffect(() => {
-    async function fetchReviews() {
-      const data: Review[] = await GetReviews();
-      setData(data);
+    async function fetchData() {
+      const dataReviews: Review[] = await GetReviews();
+      const dataGenericReviews: GenericReview[] = await GetGenericReviews();
+      setReviews(dataReviews);
+      setGenericReviews(dataGenericReviews);
     }
 
-    fetchReviews();
+    fetchData();
   }, []);
 
   return (
     <div>
       <h1>Reviews</h1>
-
-      {data ? (
+      {/* In case data is null, showing Loading */}
+      {reviews && genericReviews ? (
         <div
           className="mainRow"
           style={{
@@ -32,8 +42,8 @@ export const Dashboard: FC<DashboardProps> = (props) => {
             backgroundColor: "#6D6C6C",
           }}
         >
-          <LeftSide data={data} />
-          <RightSide data={data} />
+          <LeftSide data={reviews} />
+          <RightSide data={reviews} genericData={genericReviews} />
         </div>
       ) : (
         <div>Loading</div>

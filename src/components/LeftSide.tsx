@@ -1,10 +1,6 @@
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import { OutlinedCard } from "./Card";
+import { ReviewCard } from "./Card";
 import { Grid, List } from "@mui/material";
-import { useEffect } from "react";
 import { Review } from "../utils/Types";
 import { InsertNewReview } from "./InsertReviewCard";
 
@@ -13,12 +9,15 @@ interface LeftSideProps {
 }
 
 export default function LeftSide(props: LeftSideProps) {
+  // At the return we Return 2 main elements ->
+  //                                           1. InsertNewReview - Card for entering new Review
+  //                                           2. Grid of OutlinedCard- Each card hold data on a review
+  //                                              The data for rendering the cards come from props.data
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        // backgroundColor: "#6D6C6C",
         width: "100%",
       }}
     >
@@ -29,18 +28,14 @@ export default function LeftSide(props: LeftSideProps) {
       <br />
       <br />
       <div>
-        <Grid
-          container
-          // spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
+        <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
           <List style={{ maxHeight: 1000, overflow: "auto", width: "100%" }}>
             {" "}
             {props && props.data ? (
               props.data.map((review, index) => (
-                <Grid item xs={12} sm={12} md={10}>
+                <Grid item xs={12} sm={12} md={10} key={index}>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <OutlinedCard review={review} />
+                    <ReviewCard review={review} />
                   </div>
                   <br />
                   <br />

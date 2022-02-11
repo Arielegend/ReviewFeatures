@@ -11,15 +11,17 @@ interface OutlinedCardProps {
   review: Review;
 }
 
-export const OutlinedCard: FC<OutlinedCardProps> = (props) => {
+export const ReviewCard: FC<OutlinedCardProps> = (props) => {
   const [onHover, setOnHover] = useState(false);
 
   function handleDelete() {
-    console.log("Deleting ", props.review.id);
     DeleteReviewById(props.review.id);
   }
 
-  function GetCard() {
+  // Helper function.
+  // Returns a cards based on weather it is being hover on or not.
+  // In case it is being hovered -> Adding ClearIcon to the card
+  function getCard() {
     if (onHover) {
       return (
         <div
@@ -48,7 +50,7 @@ export const OutlinedCard: FC<OutlinedCardProps> = (props) => {
         onMouseEnter={() => setOnHover(true)}
         onMouseLeave={() => setOnHover(false)}
       >
-        {GetCard()}
+        {getCard()}
       </Card>
     </Box>
   );
