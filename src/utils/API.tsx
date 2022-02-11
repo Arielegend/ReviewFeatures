@@ -1,11 +1,11 @@
 import axios from "axios";
-import { GenericReview, Review } from "./Types";
+import { Review } from "./Types";
 
 const pathToReviews = "http://localhost:9000/reviews";
 const pathToGenericReview = "http://localhost:9000/genericReviews";
 
 /*
-This function creates GET request, to fetch all reviews
+This function creates GET request, to fetch all Reviews
 */
 export async function GetReviews() {
   const response = await axios.get(pathToReviews);
@@ -15,7 +15,7 @@ export async function GetReviews() {
 }
 
 /*
-This function creates GET request, to fetch all reviews
+This function creates GET request, to fetch all Generic Reviews
 */
 export async function GetGenericReviews() {
   const response = await axios.get(pathToGenericReview);
@@ -25,7 +25,7 @@ export async function GetGenericReviews() {
 }
 
 /*
-This function creates delete request, with id
+This function creates delete request, by id
 */
 export async function DeleteReviewById(id: string, batch = false) {
   const pathToReview = pathToReviews + "/" + id;
@@ -44,7 +44,7 @@ export async function DeleteReviewById(id: string, batch = false) {
 }
 
 /*
-This function creates delete all Reviews
+This function deletes all Reviews
 */
 export async function DeleteAllReviews(idArray: string[]) {
   for (var i = 0; i < idArray.length; i++) {
@@ -54,6 +54,9 @@ export async function DeleteAllReviews(idArray: string[]) {
   window.location.reload();
 }
 
+/*
+This function creates POS request, adding a new Review
+*/
 export async function AddReview(newReview: Review) {
   await fetch(pathToReviews, {
     method: "POST",
@@ -71,6 +74,9 @@ export async function AddReview(newReview: Review) {
   window.location.reload();
 }
 
+/*
+This function creates POS request, adding NEW Reviews
+*/
 export async function AddReviews(newReviews: Review[]) {
   for (var i = 0; i < newReviews.length; i++) {
     await fetch(pathToReviews, {

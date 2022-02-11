@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Button, Dialog, Grid } from "@mui/material";
+import { Button, Dialog } from "@mui/material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { AddReviews, DeleteAllReviews, GetGenericReviews } from "../utils/API";
+import { AddReviews, DeleteAllReviews } from "../utils/API";
 import { Get10RandomNumberInRange } from "../utils/Common";
 import { GenericReview, Review } from "../utils/Types";
 import { v4 as uuid } from "uuid";

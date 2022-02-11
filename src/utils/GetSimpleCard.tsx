@@ -3,6 +3,9 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
+/*
+Returns a simple card, based on title and content
+*/
 export default function GetActualCard(title: string, content: string) {
   return (
     <React.Fragment>
