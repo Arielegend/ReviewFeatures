@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Review } from "./Types";
 
-const pathToReviews = "http://localhost:9000/reviews";
-const pathToGenericReview = "http://localhost:9000/genericReviews";
+const pathToReviews = "http://localhost:9001/reviews";
+const pathToGenericReview = "http://localhost:9001/genericReviews";
 
 /*
 This function creates GET request, to fetch all Reviews
